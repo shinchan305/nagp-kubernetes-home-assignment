@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapp-deployment
+  namespace: nagp
+  labels:
+    tier: frontend
+    app: nodeapp
+spec:
+  selector:
+    matchLabels:
+      app: nodeapp
+  replicas: 4
+  template:
+    metadata:
+      name: nodeapp
+      labels:
+        app: nodeapp
+    spec:
+      containers:
+        - name: nodeapp
+          image: surajkishor/nodeapp:21.0
+          env:
+            - name: DB_HOST
+              value: mongodb  
+            - name: DB_NAME
+              value: users
+            - name: DB_PORT
+              value: "27017"
+            - name: DB_USER
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: user
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mongo-secret
+                  key: password
