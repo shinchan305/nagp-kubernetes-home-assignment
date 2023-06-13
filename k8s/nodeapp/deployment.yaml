@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: nodeapp
-          image: surajkishor/nodeapp:1
+          image: surajkishor/nodeapp:latest
           envFrom:
           - configMapRef:
               name: mongodb-config

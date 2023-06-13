@@ -26,7 +26,6 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('connected'))
   .catch(e => console.log(e));
 
-  // Seed data into MongoDB
 async function seedData() {
   try {
     const count = await USER.countDocuments();
