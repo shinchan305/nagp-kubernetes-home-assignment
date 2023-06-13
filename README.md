@@ -1,5 +1,7 @@
 # Please follow below steps to run this app in Kubernetes environment
 
+Note: Please ensure you are in the root directory while executing the below commands
+
 ## Step 1: Docker Login, image creation, tagging and pushing it to docker hub
 ```
 docker login
@@ -9,7 +11,7 @@ or a specific tag
 docker push <your docker username>/nodeapp:<tag>
 ```
 
-### Creating a new Kubenetes namespace
+### Creating a new Kubernetes namespace
 ```
 1.kubectl apply -f ./k8s/namespace.yaml
 
@@ -26,6 +28,9 @@ Swith to this namespace
 ```
 Create secret
 kubectl apply -f ./k8s/db/secret.yaml
+
+Create configmap
+kubectl apply -f ./k8s/nodeapp/configmap.yaml
 
 Create Persistent Volume & Claim
 kubectl apply -f ./k8s/db/pv.yaml
