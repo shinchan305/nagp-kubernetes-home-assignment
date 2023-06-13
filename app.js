@@ -19,8 +19,7 @@ const {
 } = process.env;
 
 
-// const url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`;
-const url = 'mongodb://root:123456@mongodb:27017/docker-db?authSource=admin'
+const url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`;
 console.log(url);
 console.log('inside db connection request');
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })

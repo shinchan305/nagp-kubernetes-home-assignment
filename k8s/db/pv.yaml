@@ -10,6 +10,7 @@ spec:
     storage: 1Gi
   accessModes:
     - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
   hostPath:
     path: /run/desktop/mnt/host/c/data/db
     type: DirectoryOrCreate
