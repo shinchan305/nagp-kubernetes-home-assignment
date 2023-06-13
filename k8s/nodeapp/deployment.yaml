@@ -11,6 +11,11 @@ spec:
     matchLabels:
       app: nodeapp
   replicas: 4
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
   template:
     metadata:
       name: nodeapp
@@ -19,17 +24,17 @@ spec:
     spec:
       containers:
         - name: nodeapp
-          image: surajkishor/nodeapp:21.0
+          image: surajkishor/nodeapp:1
           envFrom:
           - configMapRef:
               name: mongodb-config
           env:            
-            - name: DB_USER
+            - name: MONGO_DB_USER
               valueFrom:
                 secretKeyRef:
                   name: mongo-secret
                   key: user
-            - name: DB_PASSWORD
+            - name: MONGO_DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: mongo-secret

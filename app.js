@@ -11,15 +11,15 @@ const USER = require("./models/user");
 const mongoose = require("mongoose");
 
 const {
-  DB_USER,
-  DB_PASSWORD,
-  DB_HOST,
-  DB_PORT,
-  DB_NAME
+  MONGO_DB_USER,
+  MONGO_DB_PASSWORD,
+  MONGO_DB_HOST,
+  MONGO_DB_PORT,
+  MONGO_DB_NAME
 } = process.env;
 
 
-const url = `mongodb://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}?authSource=admin`;
+const url = `mongodb://${MONGO_DB_USER}:${MONGO_DB_PASSWORD}@${MONGO_DB_HOST}:${MONGO_DB_PORT}/${MONGO_DB_NAME}?authSource=admin`;
 console.log(url);
 console.log('inside db connection request');
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
