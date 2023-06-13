@@ -8,10 +8,10 @@ Note: Please ensure you are in the root directory while executing the below comm
 https://hub.docker.com/repository/docker/surajkishor/nodeapp/general
 
 docker login
-docker build -t <your docker username>/nodeapp:<tag> .
-docker push <your docker username>/nodeapp --all-tags
+docker build -t surajkishor/nodeapp:<tag> .
+docker push surajkishor/nodeapp --all-tags
 or a specific tag
-docker push <your docker username>/nodeapp:<tag>
+docker push surajkishor/nodeapp:<tag>
 ```
 
 ### Creating a new Kubernetes namespace
