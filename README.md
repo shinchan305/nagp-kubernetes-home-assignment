@@ -1,5 +1,3 @@
-# nagp-kubernetes-home-assignment
-
 # Please follow below steps to run this app in Kubernetes environment
 
 ## Step 1: Docker Login, image creation, tagging and pushing it to docker hub
