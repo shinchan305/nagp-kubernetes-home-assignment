@@ -20,13 +20,10 @@ spec:
       containers:
         - name: nodeapp
           image: surajkishor/nodeapp:21.0
-          env:
-            - name: DB_HOST
-              value: mongodb  
-            - name: DB_NAME
-              value: users
-            - name: DB_PORT
-              value: "27017"
+          envFrom:
+          - configMapRef:
+              name: mongodb-config
+          env:            
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
