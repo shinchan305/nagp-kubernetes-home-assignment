@@ -4,14 +4,15 @@ Note: Please ensure you are in the root directory while executing the below comm
 
 ## Step 1: Docker Login, image creation, tagging and pushing it to docker hub
 ```
+## Docker hub URL
+https://hub.docker.com/repository/docker/surajkishor/nodeapp/general
+
 docker login
 docker build -t <your docker username>/nodeapp:<tag> .
 docker push <your docker username>/nodeapp --all-tags
 or a specific tag
 docker push <your docker username>/nodeapp:<tag>
 ```
-## Docker hub URL
-https://hub.docker.com/repository/docker/surajkishor/nodeapp/tags?page=1&ordering=last_updated
 
 ### Creating a new Kubernetes namespace
 ```
